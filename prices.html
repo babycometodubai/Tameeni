@@ -1,0 +1,1226 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تأميني — الواجهة المبسطة</title>
+  <link rel="stylesheet" href="purchaseFlow.css" />
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#" aria-label="تأميني">
+        <img src="images/whiteLogo.png" alt="تأميني" id="img-brand" />
+        <span class="brand-sub">| سيارات</span>
+      </a>
+  </nav>
+  <!-- ====== PROGRESS BAR (insert here) ====== -->
+  <!-- ====== PROGRESS BAR ====== -->
+<section class="progress-wrap">
+  <div class="container progress-inner">
+    <div class="progress-bar">
+
+      <!-- Base blue line -->
+      <div class="base-line"></div>
+
+      <!-- Green filled portion -->
+      <div class="fill-line"></div>
+
+      <!-- Steps -->
+      <div class="step active">
+        <span class="num">1</span>
+        <span class="label">البيانات الأساسية</span>
+      </div>
+
+      <div class="step">
+        <span class="num">2</span>
+        <span class="label">بيانات التأمين</span>
+      </div>
+
+      <div class="step">
+        <span class="num">3</span>
+        <span class="label">قائمة الأسعار</span>
+      </div>
+
+      <div class="step">
+        <span class="num">4</span>
+        <span class="label">الإضافات</span>
+      </div>
+
+      <div class="step">
+        <span class="num">5</span>
+        <span class="label">الملخص والدفع</span>
+      </div>
+
+      <!-- ✅ RIGHT ICON (inside green circle) -->
+      <div class="end-icon end-right">
+        <div class="icon-circle green-circle">
+          <img src="images/carNav.png" alt="Car Icon" class="circle-icon">
+        </div>
+      </div>
+
+      <!-- ✅ LEFT ICON (inside blue circle) -->
+      <div class="end-icon end-left">
+        <div class="icon-circle blue-circle">
+          <img src="images/vLogo.png" alt="Shield Icon" class="circle-icon">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="insurance-form container" aria-label="نموذج بيانات التأمين">
+
+ 
+</section>
+
+
+<style>
+    :root { --blue: #1e90ff; --ink: #0b3550 }
+    body { background: #fff }
+    .card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 1rem; transition: .2s }
+    .card:hover { background: #f9fbff; box-shadow: 0 4px 12px rgba(0,0,0,.05) }
+    .badge { background: #eef6ff; color: #1e90ff; border: 1px solid #cfe7ff; border-radius: 999px; padding: .15rem .55rem; font-size: .75rem }
+    .pill { display: flex; border: 1px solid #d9e5f5; border-radius: 14px; overflow: hidden; background: #f7fbff }
+    .pill button { flex: 1; padding: .7rem .8rem; font-weight: 600; border-inline-start: 1px solid #d9e5f5; transition: .2s }
+    .pill button:first-child { border-inline-start: 0 }
+    .pill .active { background: var(--blue); color: #fff; border-color: var(--blue) }
+    .chip { border: 1px solid #e5e7eb; border-radius: 999px; padding: .2rem .6rem; font-size: .7rem; background: #f7faff }
+    .select-offer.active { background: var(--blue) !important; color: white !important }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.sticky{position:sticky}.top-0{top:0px}.bottom-\[-120px\]{bottom:-120px}.left-0{left:0px}.right-0{right:0px}.z-30{z-index:30}.z-50{z-index:50}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mr-2{margin-right:0.5rem}.mt-2{margin-top:0.5rem}.flex{display:flex}.grid{display:grid}.h-5{height:1.25rem}.h-9{height:2.25rem}.w-5{width:1.25rem}.w-9{width:2.25rem}.max-w-6xl{max-width:72rem}.select-none{-webkit-user-select:none;user-select:none}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.bg-\[\#e9f5ff\]{--tw-bg-opacity:1;background-color:rgb(233 245 255 / var(--tw-bg-opacity, 1))}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-\[var\(--blue\)\]{background-color:var(--blue)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.px-4{padding-left:1rem;padding-right:1rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-right{text-align:right}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.text-\[var\(--blue\)\]{color:var(--blue)}.text-\[var\(--ink\)\]{color:var(--ink)}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}</style></head>
+<body class="text-gray-900">
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+    <h1 class="text-xl font-bold text-[var(--ink)] mb-4">قائمة الأسعار</h1>
+
+    <!-- شريط ملخص أعلى الصفحة -->
+    <section class="card mb-5">
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <span class="badge" id="badgeProduct">التأمين: ضد الغير</span>
+        <span class="badge" id="badgeUsage">الاستخدام: Private</span>
+        <span class="badge" id="badgeCity">المدينة: —</span>
+        <span class="badge" id="badgeStart">السريان: —</span>
+      </div>
+    </section>
+
+    <!-- اختيار نوع التأمين + فلتر الفرز -->
+    <section class="card mb-5 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+      <div class="pill" role="tablist">
+        <button type="button" class="active" data-product="TPL">ضد الغير</button>
+        <button type="button" data-product="Comprehensive">شامل</button>
+      </div>
+      <div>
+        <label class="text-sm mr-2">فرز حسب:</label>
+        <select id="sortSelect" class="rounded-xl border border-gray-300 px-3 py-2">
+          <option value="asc">الأقل سعرًا</option>
+          <option value="desc">الأعلى سعرًا</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- قائمة العروض -->
+    <section id="offers" class="grid gap-4"><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصحة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">606 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-21-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصقر</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">613 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-6-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">613 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-15-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">نجم</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">618 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-27-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العالمية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">625 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-16-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الشرق</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">625 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-19-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الراجحي تكافل</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">633 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-3-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بي كير</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">641 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-24-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">659 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-0-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الوطنية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">660 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-25-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصحة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">662 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-21-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أمانة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">667 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-14-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سايكو</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">672 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-4-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الإنماء طوكيو مارين</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">672 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-8-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الخليجية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">674 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-18-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الإنماء طوكيو مارين</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">680 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-8-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الشرق</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">681 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-19-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الخليجية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">706 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-18-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ملاذ</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">707 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-1-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الدرع التعاوني</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">707 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-26-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">714 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-15-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">رعاية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">716 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-22-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربية التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">719 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-7-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بروج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">719 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-9-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أمانة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">723 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-14-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أمانة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">737 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-14-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">درع العرب</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">742 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-12-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الراجحي تكافل</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">752 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-3-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الدرع التعاوني</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">752 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-26-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">المتحدة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">754 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-17-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سايكو</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">755 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-4-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج الأهلية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">765 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-5-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سلامة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">767 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-10-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">درع العرب</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">770 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-12-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربي</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">773 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-20-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العالمية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">776 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-16-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">781 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-15-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بروج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">784 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-9-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سايكو</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">790 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-4-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سلامة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">797 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-10-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصحة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">815 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-21-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربي</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">820 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-20-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الإنماء طوكيو مارين</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">828 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-8-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ميدغلف</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">828 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-11-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">سلامة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">835 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-10-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ولاء</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">838 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-2-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الشرق</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">844 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-19-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">المتحدة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">847 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-17-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الوطنية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">847 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-25-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أكسا</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">849 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-13-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بي كير</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">849 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-24-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الدرع التعاوني</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">871 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-26-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الخليجية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">873 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-18-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربي</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">874 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-20-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ميدغلف</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">886 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-11-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">درع العرب</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">886 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-12-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ميدغلف</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">889 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-11-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ولاء</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">890 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-2-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">893 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-0-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أكسا</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">895 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-13-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربية التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">901 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-7-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج الأهلية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">909 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-5-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">نجم</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">924 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-27-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">925 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-0-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بي كير</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">932 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-24-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ملاذ</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">935 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-1-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">أكسا</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">940 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-13-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الراجحي تكافل</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">941 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-3-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العربية التعاونية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">944 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-7-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">العالمية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">945 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-16-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ولاء</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">946 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-2-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">ملاذ</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">947 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-1-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">اتحاد الخليج الأهلية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">953 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-5-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">رعاية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">958 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-22-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الاتحاد</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">960 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-23-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">رعاية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">962 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-22-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">نجم</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">972 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-27-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصقر</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">973 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-6-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">بروج</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">976 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-9-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">المتحدة</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">980 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-17-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الاتحاد</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">989 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-23-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الوطنية</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">990 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-25-1" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الصقر</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">991 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-6-3" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article><article class="card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold text-lg">الاتحاد</div>
+            <div class="text-xs text-gray-500">ضد الغير</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              <span class="chip">مساعدة على الطريق</span><span class="chip">دعم مطالبات سريع</span><span class="chip">بدون تحمل للطرف الثالث</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">994 <span class="text-sm">SAR</span></div>
+            <button data-id="TPL-23-2" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div></article></section>
+
+    <!-- شريط المتابعة الثابت -->
+    <div id="stickyBar" class="fixed bottom-[-120px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg px-5 py-4 flex items-center justify-between transition-all duration-500 ease-out z-50">
+      <div>
+        <div id="stickyCompany" class="font-bold text-[var(--ink)] text-lg"></div>
+        <div id="stickyPrice" class="text-gray-600 text-sm"></div>
+      </div>
+      <button id="stickyContinue" class="px-7 py-3 rounded-xl bg-[var(--blue)] text-white font-bold text-base shadow-md hover:shadow-lg transition">متابعة: الإضافات</button>
+    </div>
+  </main>
+
+  <script>
+    const qs=(s,p=document)=>p.querySelector(s); const qsa=(s,p=document)=>[...p.querySelectorAll(s)];
+
+    // قراءة بيانات الخطوات السابقة
+    const s2 = JSON.parse(sessionStorage.getItem('step2')||'{}');
+
+    // ملخص أعلى الصفحة
+    qs('#badgeProduct').textContent = 'التأمين: ' + (s2.product==='Comprehensive'?'شامل':'ضد الغير');
+    qs('#badgeUsage').textContent   = 'الاستخدام: ' + (s2.usage||'—');
+    qs('#badgeCity').textContent    = 'المدينة: ' + (s2.city||'—');
+    qs('#badgeStart').textContent   = 'السريان: ' + (s2.policyStart||'—');
+
+    // جميع شركات التأمين السعودية
+    const SA_COMPANIES = [
+      "التعاونية","ملاذ","ولاء","الراجحي تكافل","سايكو","اتحاد الخليج الأهلية","الصقر","العربية التعاونية",
+      "الإنماء طوكيو مارين","بروج","سلامة","ميدغلف","درع العرب","أكسا","أمانة","اتحاد الخليج","العالمية",
+      "المتحدة","الخليجية","الشرق","العربي","الصحة","رعاية","الاتحاد","بي كير","الوطنية","الدرع التعاوني","نجم"
+    ];
+
+    // توليد عروض كثيرة لكل شركة
+    function generateOffers(type){
+      let offers = [];
+      SA_COMPANIES.forEach((company,i)=>{
+        for(let x=1; x<=3; x++){
+const base = type === "Comprehensive" ? 1200 : 600;
+          const price = base + Math.floor(Math.random()*400);
+          const perks = type === "Comprehensive"
+            ? ["إصلاح وكالة","سيارة بديلة","زجاج بدون تحمل"]
+            : ["مساعدة على الطريق","دعم مطالبات سريع","بدون تحمل للطرف الثالث"];
+          offers.push({id:type+"-"+i+"-"+x, company, price, product:type, perks});
+        }
+      });
+      return offers.sort((a,b)=>a.price-b.price);
+    }
+
+    // رسم العروض
+    function render(list){
+      const container=qs('#offers');
+      container.innerHTML='';
+      list.forEach(o=>{
+        const el=document.createElement('article');
+        el.className='card offer flex flex-col md:flex-row items-start md:items-center justify-between gap-4';
+        el.innerHTML=`
+          <div>
+            <div class="font-semibold text-lg">${o.company}</div>
+            <div class="text-xs text-gray-500">${o.product==='Comprehensive'?'شامل':'ضد الغير'}</div>
+            <div class="mt-2 flex gap-2 flex-wrap">
+              ${o.perks.map(p=>`<span class="chip">${p}</span>`).join('')}
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-2xl font-bold text-[var(--blue)]">${o.price} <span class="text-sm">SAR</span></div>
+            <button data-id="${o.id}" class="select-offer mt-2 px-4 py-2 rounded-xl border">اختيار العرض</button>
+          </div>`;
+        container.appendChild(el);
+      });
+      bindSelect();
+    }
+
+    // اختيار عرض + تحديث الشريط السفلي
+    let selectedId=null;
+    function bindSelect(){
+      qsa('.select-offer').forEach(btn=>{
+        btn.onclick=()=>{
+          selectedId = btn.dataset.id;
+          qsa('.select-offer').forEach(b=>b.classList.remove('active','bg-[var(--blue)]','text-white'));
+          btn.classList.add('active','bg-[var(--blue)]','text-white');
+
+          const selectedOffer = currentOffers.find(o => o.id === selectedId);
+          if(selectedOffer){
+            qs('#stickyCompany').textContent = selectedOffer.company;
+            qs('#stickyPrice').textContent = `${selectedOffer.price} SAR - ${selectedOffer.product === "Comprehensive" ? "شامل" : "ضد الغير"}`;
+            qs('#stickyBar').style.bottom = "0";
+          }
+        };
+      });
+    }
+
+    // زر المتابعة في الشريط السفلي
+    qs('#stickyContinue').onclick=()=>{
+      if(!selectedId) return;
+      const offer = currentOffers.find(o=>o.id===selectedId);
+      sessionStorage.setItem('step3', JSON.stringify(offer));
+      location.href='Add-ons.html';
+    };
+
+    // التبديل بين شامل وضد الغير
+    let currentOffers = generateOffers("TPL");
+    render(currentOffers);
+
+    qsa('[data-product]').forEach(btn=>{
+      btn.onclick=()=>{
+        qsa('[data-product]').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedId=null;
+        qs('#stickyBar').style.bottom="-120px";
+        currentOffers = generateOffers(btn.dataset.product);
+        render(currentOffers);
+      };
+    });
+
+    // التحكم بالفرز
+    qs('#sortSelect').addEventListener('change', e=>{
+      const sortType = e.target.value;
+      currentOffers.sort((a,b)=>{
+        return sortType === 'asc' ? a.price - b.price : b.price - a.price;
+      });
+      render(currentOffers);
+    });
+  </script>
+
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col logo-col">
+        <img src="images/whiteLogo.png" alt="تأميني" class="footer-logo" />
+        <p class="follow">تابع تأميني</p>
+
+        <p class="dev">
+          تطوير وتشغيل 
+          <img src="images/rasan.png" alt="Rasan" class="rasan-logo" />
+        </p>
+
+        <p class="copyright">© تأميني 2025. جميع الحقوق محفوظة</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>المنتجات</h4>
+        <ul>
+          <li><a href="#">تأمين السيارات</a></li>
+          <li><a href="#">تأمين السفر</a></li>
+          <li><a href="#">تأمين المنزل</a></li>
+          <li><a href="#">تأمين الإقامة المميزة</a></li>
+          <li><a href="#">تأمين المنشآت</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>الدعم</h4>
+        <ul>
+          <li><a href="#">تواصل معنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>الموارد</h4>
+        <ul>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+          <li><a href="#">مدونة تأميني</a></li>
+          <li><a href="#">لوائح هيئة التأمين</a></li>
+          <li><a href="#">شركاؤنا</a></li>
+          <li><a href="#">الوظائف</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="prices.js"></script>
+</body>
+</html>

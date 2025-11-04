@@ -1,0 +1,530 @@
+:root {
+  --bg-hero:#e9f3ff;
+  --bg-hero-2:#f3f8ff;
+  --brand:#1e75ff;
+  --ink:#0a1930;
+  --muted:#5e6c7c;
+  --chip:#eef5ff;
+  --line:#e6eef7;
+  --danger:#d92638;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Tajawal", "Noto Naskh Arabic", sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+/* =========================
+   🟦 NAVBAR
+========================= */
+.navbar {
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+
+.nav-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand img {
+  height: 100px;
+  display: block;
+}
+
+.brand-sub {
+  color: #c0c7cf;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   🟩 FOOTER
+========================= */
+.footer {
+  background: #f7f9fb;
+  padding: 70px 0 40px;
+  margin-top: 60px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  justify-items: start;
+  text-align: right;
+}
+
+.footer-col h4 {
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: #425162;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--brand);
+}
+
+/* Logo column */
+.logo-col {
+  text-align: right;
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 14px;
+  background-color: #f7f9fb;
+  mix-blend-mode: multiply;
+}
+
+.follow {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dev {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  font-weight: 700;
+  color: #555;
+  margin-top: 10px;
+}
+
+.dev .rasan-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.copyright {
+  font-size: 13px;
+  color: #7c8794;
+  margin-top: 8px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-grid {
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+/* Progress bar styles (progress.css)
+   Designed for RTL layout and to match screenshot look */
+:root {
+  --brand: #c2d9ff;   /* blue */
+  --green: #4CAF50;   /* green */
+  --muted: #c9cfd6;   /* label gray */
+  --line-bg: #e6eef7; /* pale line */
+}
+
+/* wrapper spacing to match screenshot */
+.progress-wrap {
+  background: transparent;
+  padding: 28px 0 18px;
+  display: flex;
+  justify-content: center; /* centers the bar */
+}
+
+/* keep the progress centered within the page container */
+.progress-inner {
+  position: relative;
+  width: 75%; /* ✅ changed: total bar width = 75% of screen */
+  padding: 0 8px;
+  overflow: visible;
+}
+
+/* base line: long blue thin line */
+.progress-bar {
+  position: relative;
+  height: 80px;               /* area for icons and labels */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* full base line (blue) */
+.base-line {
+  position: absolute;
+  top: 40%;
+  left: 24px;   /* leave space for left end icon */
+  right: 24px;  /* leave space for right end icon */
+  height: 4px;
+  background: var(--brand);
+  transform: translateY(-50%);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 0 0 2px rgba(30,117,255,0.02) inset;
+}
+
+/* filled green portion that grows from right to left */
+.fill-line {
+  position: absolute;
+  top: 40%;
+  right: 24px;    /* align to right icon edge */
+  height: 8px;    /* thicker green like screenshot */
+  background: var(--green);
+  transform: translateY(-50%);
+  border-radius: 8px;
+  z-index: 2;
+  transition: width 380ms cubic-bezier(.2,.9,.25,1);
+  width: 12%;     /* default (small green on the right) */
+  box-shadow: 0 2px 8px rgba(76,175,80,0.12);
+}
+
+/* step markers */
+.progress-bar .step {
+  position: relative;
+  z-index: 3;
+  width: calc((100% - 48px) / 5);
+  min-width: 80px;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.progress-bar .step .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  color: var(--muted);
+  background: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0 auto;
+  transform: translateY(-26px);
+  transition: all 240ms ease;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+}
+
+.progress-bar .step .label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: -2px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+.progress-bar .step.completed .num {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: #fff;
+}
+
+.progress-bar .step.active .num {
+  border-color: var(--green);
+  color: var(--green);
+  background: #fff;
+  transform: translateY(-26px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(76,175,80,0.12);
+}
+
+.progress-bar .step.active .label {
+  color: var(--green);
+}
+
+.progress-bar .step .num::after {
+  content: "";
+  display: none;
+}
+
+/* ✅ END ICONS — replace SVGs or <img> here */
+.end-icon {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.end-right {
+  right: 0;
+  /* 🔁 To change END icon, replace image inside HTML:
+     <img src="images/car.svg" class="end-icon end-right"> */
+}
+
+.end-left {
+  left: 0;
+  transform: translateY(-50%);
+  /* 🔁 To change START icon, replace image inside HTML:
+     <img src="images/shield.svg" class="end-icon end-left"> */
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .progress-bar .step .label { font-size: 14px; }
+  .progress-bar .step .num { width: 26px; height: 26px; font-size: 13px; }
+  .fill-line { height: 7px; }
+}
+
+/* === END ICON CIRCLES === */
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2.4px solid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.icon-circle img.circle-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+
+}
+
+/* Specific colors */
+.green-circle {
+  border-color: #4CAF50;
+}
+
+.blue-circle {
+  border-color: #1E75FF;
+}
+
+/* Shift first and last icon circles outward */
+.icon-circle:first-child {
+  transform: translateX(-12px); /* move right */
+}
+
+.icon-circle:last-child {
+  transform: translateX(12px); /* move left */
+}
+
+/* Optional: make it responsive */
+@media (max-width: 600px) {
+  .icon-circle:first-child {
+    transform: translateX(8px);
+  }
+  .icon-circle:last-child {
+    transform: translateX(-8px);
+  }
+}
+
+
+
+/* ---------- Insurance form styles (match screenshot) ---------- */
+.insurance-form {
+  margin-top: 18px;
+  margin-bottom: 36px;
+  padding-top: 6px;
+  padding-bottom: 20px;
+}
+
+/* layout helpers */
+.row {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+.two-cols { flex-wrap: nowrap; }
+@media (max-width: 900px) {
+  .row { flex-direction: column; }
+}
+
+/* card-like fields */
+.card.field-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  flex: 1;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+}
+
+/* Label */
+.field-label {
+  display: block;
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-align: right;
+}
+
+/* segmented button group (blue active like screenshot) */
+.segmented.group {
+  display: inline-flex;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  direction: rtl; /* ensure natural RTL ordering for buttons */
+}
+
+.seg-btn {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+  text-align: center;
+  color: #1b2b3a;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+}
+.seg-btn:hover { filter: brightness(.985); }
+
+/* active blue style */
+.seg-active {
+  background: #145bcd;
+  color: #fff;
+  border-color: var(--brand);
+  box-shadow: 0 8px 20px rgba(30,117,255,0.12);
+}
+
+/* inputs */
+.field-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-size: 15px;
+  outline: none;
+  text-align: right;
+  background: #fff;
+  color: var(--ink);
+}
+.field-input::placeholder { color: #c7ccd3; font-weight: 600; }
+
+/* muted desc under inputs */
+.muted-desc {
+  margin-top: 8px;
+  color: #7a8895;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* consent paragraph centered under fields */
+.consent {
+  text-align: center;
+  color: #344955;
+  font-weight: 800;
+  margin: 18px 0 8px;
+  font-size: 16px;
+}
+
+/* Next button row */
+.next-row {
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* big blue Next button pinned to left (LTR visually but page is RTL — we place it like screenshot)*/
+.btn-next {
+  position: absolute;
+  left: 40px; /* adds 40px space from the left edge */
+  background: #145bcd;
+  color: #fff;
+  border: none;
+  font-weight: 900;
+  padding: 10px 28px;
+  border-radius: 10px;
+  font-size: 22px;
+  box-shadow: 0 10px 28px rgba(30,117,255,0.12);
+  cursor: pointer;
+  outline: none;
+  transform: translateY(0);
+}
+
+.btn-next:active { transform: translateY(1px); }
+
+/* show validation errors */
+.field-error {
+  border-color: var(--danger) !important;
+}
+.error-text {
+  color: var(--danger);
+  font-weight: 800;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.hint {
+  font-size: .78rem;
+  color: #6b7280;
+  white-space: normal; /* allow wrapping */
+  line-height: 1.4;    /* make it look nicer over 2 lines */
+  max-width: 360px;    /* control when it breaks */
+}
+
+/* small responsive tweak for button on narrow screens */
+@media (max-width: 520px) {
+  .btn-next { width: 100%; padding: 14px 20px; font-size: 18px; border-radius: 8px; }
+  .two-cols { flex-direction: column; }
+}
+
+/* ensure container alignment consistent with your layout */
+.insurance-form.container { max-width: 1240px; padding-inline: 20px; }
+
+/* Small visual polish to match screenshot thin borders */
+.card.field-card { border-radius: 10px; }
