@@ -304,7 +304,6 @@ a {
   left: 0;
   transform: translateY(-50%);
 }
-
 /* === Tablets and small laptops === */
 @media (max-width: 900px) {
   .progress-bar .step .label {
@@ -332,41 +331,18 @@ a {
   }
   .progress-bar .step .label {
     font-size: 12px;
-    margin-top: 26px;
+    margin-top: 32px; /* ⬇ pushed down */
   }
   .progress-bar .step .num {
     width: 22px;
     height: 22px;
     font-size: 11px;
+    transform: translateY(-22px); /* ⬆ moved up */
   }
   .fill-line {
     height: 6px;
   }
 }
-
-/* === Small phones (400px and below) === */
-@media (max-width: 400px) {
-  .progress-bar {
-    gap: 6px;
-  }
-  .progress-bar .step {
-    min-width: 0;
-  }
-  .progress-bar .step .label {
-    font-size: 10px;
-    margin-top: 28px;
-    white-space: nowrap;
-  }
-  .progress-bar .step .num {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-  }
-  .fill-line {
-    height: 5px;
-  }
-}
-
 
 /* === Small phones (400px and below) === */
 @media (max-width: 400px) {
@@ -379,19 +355,20 @@ a {
   }
   .progress-bar .step .label {
     font-size: 10px;
-    margin-top: 28px; /* ✅ labels a bit lower for clarity */
+    margin-top: 34px; /* ⬇ labels slightly lower for tiny screens */
     white-space: nowrap;
   }
   .progress-bar .step .num {
     width: 20px;
     height: 20px;
     font-size: 10px;
-    transform: translateY(-16px); /* ✅ perfect alignment */
+    transform: translateY(-20px); /* ⬆ numbers aligned higher */
   }
   .fill-line {
     height: 5px;
   }
 }
+
 
 
 
