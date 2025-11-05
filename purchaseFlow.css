@@ -310,14 +310,17 @@ a {
 
 /* responsive tweaks */
 /* === Tablets and small laptops === */
+/* === Tablets and small laptops === */
 @media (max-width: 900px) {
   .progress-bar .step .label {
     font-size: 14px;
+    margin-top: 22px; /* slightly more space below circles */
   }
   .progress-bar .step .num {
     width: 26px;
     height: 26px;
     font-size: 13px;
+    transform: translateY(-20px); /* keep numbers level */
   }
   .fill-line {
     height: 7px;
@@ -328,14 +331,20 @@ a {
 @media (max-width: 600px) {
   .progress-bar {
     gap: 10px;
+    flex-wrap: nowrap; /* ✅ keep steps horizontal */
+  }
+  .progress-bar .step {
+    min-width: auto;
   }
   .progress-bar .step .label {
     font-size: 12px;
+    margin-top: 26px; /* ✅ push labels down a bit more */
   }
   .progress-bar .step .num {
     width: 22px;
     height: 22px;
     font-size: 11px;
+    transform: translateY(-18px); /* ✅ keeps all circles level */
   }
   .fill-line {
     height: 6px;
@@ -346,21 +355,27 @@ a {
 @media (max-width: 400px) {
   .progress-bar {
     gap: 6px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* ✅ still horizontal */
+  }
+  .progress-bar .step {
+    min-width: 0;
   }
   .progress-bar .step .label {
     font-size: 10px;
+    margin-top: 28px; /* ✅ labels a bit lower for clarity */
     white-space: nowrap;
   }
   .progress-bar .step .num {
     width: 20px;
     height: 20px;
     font-size: 10px;
+    transform: translateY(-16px); /* ✅ perfect alignment */
   }
   .fill-line {
     height: 5px;
   }
 }
+
 
 
 /* === END ICON CIRCLES === */
@@ -568,10 +583,14 @@ a {
 /* small responsive tweak for button on narrow screens */
 @media (max-width: 520px) {
   .btn-next {
-    width: 40vw; /* 40% of the viewport width */
+    width: 35vw; /* 35% of the viewport width */
     padding: 14px 20px;
     font-size: 18px;
     border-radius: 8px;
+    margin-top: 28px; /* ✅ pushes the button down */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* ✅ centers horizontally */
   }
 
   .two-cols {
