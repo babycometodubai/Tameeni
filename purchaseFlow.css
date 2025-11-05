@@ -328,6 +328,7 @@ a {
 }
 
 /* === Large phones (600px and below) === */
+/* === Large phones (600px and below) === */
 @media (max-width: 600px) {
   .progress-bar {
     gap: 10px;
@@ -338,16 +339,14 @@ a {
     min-width: auto;
   }
 
-  .progress-bar .step .label {
-    font-size: 12px;
-    margin-top: 26px; /* ✅ push labels down a bit more */
+  /* ✅ Hide circles (numbers) completely */
+  .progress-bar .step .num {
+    display: none;
   }
 
-  .progress-bar .step .num {
-    width: 22px;
-    height: 22px;
-    font-size: 11px;
-    transform: translateY(-18px); /* ✅ keeps all circles level */
+  .progress-bar .step .label {
+    font-size: 12px;
+    margin-top: 10px; /* ✅ pull labels up since circles are gone */
   }
 
   .fill-line {
@@ -366,23 +365,22 @@ a {
     min-width: 0;
   }
 
-  .progress-bar .step .label {
-    font-size: 10px;
-    margin-top: 28px; /* ✅ labels a bit lower for clarity */
-    white-space: nowrap;
+  /* ✅ Hide circles (numbers) completely */
+  .progress-bar .step .num {
+    display: none;
   }
 
-  .progress-bar .step .num {
-    width: 20px;
-    height: 20px;
+  .progress-bar .step .label {
     font-size: 10px;
-    transform: translateY(-16px); /* ✅ perfect alignment */
+    margin-top: 35px; /* ✅ bring labels closer to the line */
+    white-space: nowrap;
   }
 
   .fill-line {
     height: 5px;
   }
 }
+
 
 
 
