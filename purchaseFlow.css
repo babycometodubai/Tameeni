@@ -334,6 +334,7 @@ a {
   .progress-bar {
     gap: 10px;
     flex-wrap: nowrap; /* ✅ keep steps horizontal */
+    align-items: flex-start; /* make sure items align to the top of the container */
   }
 
   .progress-bar .step {
@@ -347,11 +348,13 @@ a {
 
   .progress-bar .step .label {
     font-size: 12px;
-    margin-top: -20px; /* ⬇️ push labels farther down */
+    margin-top: 55px; /* ⬇️ move labels below the line */
+    display: block;
   }
 
   .fill-line {
     height: 6px;
+    margin-bottom: 15px; /* ✅ add space between line and labels */
   }
 }
 
@@ -360,6 +363,7 @@ a {
   .progress-bar {
     gap: 6px;
     flex-wrap: nowrap; /* ✅ still horizontal */
+    align-items: flex-start;
   }
 
   .progress-bar .step {
@@ -373,12 +377,13 @@ a {
 
   .progress-bar .step .label {
     font-size: 10px;
-    margin-top: -15px; /* ⬇️ push labels farther down */
+    margin-top: 50px; /* ⬇️ move labels below the line */
     white-space: nowrap;
   }
 
   .fill-line {
     height: 5px;
+    margin-bottom: 15px; /* ✅ same spacing under the line */
   }
 }
 
