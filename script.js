@@ -117,3 +117,9 @@ if (startButtons.length > 0) {
     });
   });
 }
+
+document.querySelectorAll('.buy-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    window.location.href = 'purchaseFlow.html';
+  });
+});

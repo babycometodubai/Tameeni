@@ -309,11 +309,59 @@ a {
 }
 
 /* responsive tweaks */
+/* === Tablets and small laptops === */
 @media (max-width: 900px) {
-  .progress-bar .step .label { font-size: 14px; }
-  .progress-bar .step .num { width: 26px; height: 26px; font-size: 13px; }
-  .fill-line { height: 7px; }
+  .progress-bar .step .label {
+    font-size: 14px;
+  }
+  .progress-bar .step .num {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  .fill-line {
+    height: 7px;
+  }
 }
+
+/* === Large phones (600px and below) === */
+@media (max-width: 600px) {
+  .progress-bar {
+    gap: 10px;
+  }
+  .progress-bar .step .label {
+    font-size: 12px;
+  }
+  .progress-bar .step .num {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+  .fill-line {
+    height: 6px;
+  }
+}
+
+/* === Small phones (400px and below) === */
+@media (max-width: 400px) {
+  .progress-bar {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .progress-bar .step .label {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .progress-bar .step .num {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .fill-line {
+    height: 5px;
+  }
+}
+
 
 /* === END ICON CIRCLES === */
 .icon-circle {
@@ -519,9 +567,18 @@ a {
 
 /* small responsive tweak for button on narrow screens */
 @media (max-width: 520px) {
-  .btn-next { width: 100%; padding: 14px 20px; font-size: 18px; border-radius: 8px; }
-  .two-cols { flex-direction: column; }
+  .btn-next {
+    width: 40vw; /* 40% of the viewport width */
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+
+  .two-cols {
+    flex-direction: column;
+  }
 }
+
 
 /* ensure container alignment consistent with your layout */
 .insurance-form.container { max-width: 1240px; padding-inline: 20px; }
