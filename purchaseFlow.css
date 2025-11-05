@@ -199,7 +199,7 @@ a {
 /* full base line (blue) */
 .base-line {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 24px;   /* leave space for left end icon */
   right: 24px;  /* leave space for right end icon */
   height: 4px;
@@ -213,7 +213,7 @@ a {
 /* filled green portion that grows from right to left */
 .fill-line {
   position: absolute;
-  top: 40%;
+  top: 50%;
   right: 24px;    /* align to right icon edge */
   height: 8px;    /* thicker green like screenshot */
   background: var(--green);
@@ -248,7 +248,6 @@ a {
   font-weight: 800;
   font-size: 14px;
   margin: 0 auto;
-  transform: translateY(-26px);
   transition: all 240ms ease;
   box-shadow: 0 2px 0 rgba(0,0,0,0.02);
 }
@@ -273,7 +272,6 @@ a {
   border-color: var(--green);
   color: var(--green);
   background: #fff;
-  transform: translateY(-26px) scale(1.02);
   box-shadow: 0 6px 16px rgba(76,175,80,0.12);
 }
 
@@ -320,7 +318,6 @@ a {
     width: 26px;
     height: 26px;
     font-size: 13px;
-    transform: translateY(-20px); /* keep numbers level */
   }
   .fill-line {
     height: 7px;
@@ -344,7 +341,6 @@ a {
     width: 22px;
     height: 22px;
     font-size: 11px;
-    transform: translateY(-18px); /* ✅ keeps all circles level */
   }
   .fill-line {
     height: 6px;
@@ -369,7 +365,7 @@ a {
     width: 20px;
     height: 20px;
     font-size: 10px;
-    transform: translateY(-16px); /* ✅ perfect alignment */
+    
   }
   .fill-line {
     height: 5px;
