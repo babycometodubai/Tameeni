@@ -347,7 +347,7 @@ a {
 
   .progress-bar .step .label {
     font-size: 12px;
-    margin-top: 28px; /* ⬇️ push labels farther down */
+    margin-top: 8px; /* ⬇️ push labels farther down */
   }
 
   .fill-line {
@@ -373,7 +373,7 @@ a {
 
   .progress-bar .step .label {
     font-size: 10px;
-    margin-top: 38px; /* ⬇️ push labels farther down */
+    margin-top: 5px; /* ⬇️ push labels farther down */
     white-space: nowrap;
   }
 
