@@ -164,6 +164,7 @@ a {
 
 /* Progress bar styles (progress.css)
    Designed for RTL layout and to match screenshot look */
+
 :root {
   --brand: #c2d9ff;   /* blue */
   --green: #4CAF50;   /* green */
@@ -176,13 +177,13 @@ a {
   background: transparent;
   padding: 28px 0 18px;
   display: flex;
-  justify-content: center; /* centers the bar */
+  justify-content: center;
 }
 
 /* keep the progress centered within the page container */
 .progress-inner {
   position: relative;
-  width: 75%; /* ✅ changed: total bar width = 75% of screen */
+  width: 75%;
   padding: 0 8px;
   overflow: visible;
 }
@@ -190,18 +191,18 @@ a {
 /* base line: long blue thin line */
 .progress-bar {
   position: relative;
-  height: 80px;               /* area for icons and labels */
+  height: 80px;
   display: flex;
-  align-items: center;
+  align-items: center; /* ✅ keeps all circles perfectly level */
   justify-content: space-between;
 }
 
 /* full base line (blue) */
 .base-line {
   position: absolute;
-  top: 50%;
-  left: 24px;   /* leave space for left end icon */
-  right: 24px;  /* leave space for right end icon */
+  top: 50%; /* ✅ center line vertically */
+  left: 24px;
+  right: 24px;
   height: 4px;
   background: var(--brand);
   transform: translateY(-50%);
@@ -213,15 +214,15 @@ a {
 /* filled green portion that grows from right to left */
 .fill-line {
   position: absolute;
-  top: 50%;
-  right: 24px;    /* align to right icon edge */
-  height: 8px;    /* thicker green like screenshot */
+  top: 50%; /* ✅ center fill line too */
+  right: 24px;
+  height: 8px;
   background: var(--green);
   transform: translateY(-50%);
   border-radius: 8px;
   z-index: 2;
   transition: width 380ms cubic-bezier(.2,.9,.25,1);
-  width: 12%;     /* default (small green on the right) */
+  width: 12%;
   box-shadow: 0 2px 8px rgba(76,175,80,0.12);
 }
 
@@ -233,10 +234,13 @@ a {
   min-width: 80px;
   text-align: center;
   pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .progress-bar .step .num {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 28px;
@@ -248,12 +252,11 @@ a {
   font-weight: 800;
   font-size: 14px;
   margin: 0 auto;
-  transition: all 240ms ease;
   box-shadow: 0 2px 0 rgba(0,0,0,0.02);
+  transition: all 240ms ease;
 }
 
 .progress-bar .step .label {
-  display: block;
   margin-top: 20px;
   margin-bottom: -2px;
   color: var(--muted);
@@ -262,17 +265,17 @@ a {
   opacity: 0.95;
 }
 
+/* active and completed states */
 .progress-bar .step.completed .num {
   border-color: var(--brand);
   color: var(--brand);
-  background: #fff;
 }
 
 .progress-bar .step.active .num {
   border-color: var(--green);
   color: var(--green);
-  background: #fff;
   box-shadow: 0 6px 16px rgba(76,175,80,0.12);
+  transform: scale(1.02); /* ✅ subtle visual effect only */
 }
 
 .progress-bar .step.active .label {
@@ -287,7 +290,7 @@ a {
 /* ✅ END ICONS — replace SVGs or <img> here */
 .end-icon {
   position: absolute;
-  top: 40%;
+  top: 50%; /* ✅ align icons to same center */
   transform: translateY(-50%);
   z-index: 4;
   pointer-events: none;
@@ -295,24 +298,18 @@ a {
 
 .end-right {
   right: 0;
-  /* 🔁 To change END icon, replace image inside HTML:
-     <img src="images/car.svg" class="end-icon end-right"> */
 }
 
 .end-left {
   left: 0;
   transform: translateY(-50%);
-  /* 🔁 To change START icon, replace image inside HTML:
-     <img src="images/shield.svg" class="end-icon end-left"> */
 }
 
-/* responsive tweaks */
-/* === Tablets and small laptops === */
 /* === Tablets and small laptops === */
 @media (max-width: 900px) {
   .progress-bar .step .label {
     font-size: 14px;
-    margin-top: 22px; /* slightly more space below circles */
+    margin-top: 22px;
   }
   .progress-bar .step .num {
     width: 26px;
@@ -328,14 +325,14 @@ a {
 @media (max-width: 600px) {
   .progress-bar {
     gap: 10px;
-    flex-wrap: nowrap; /* ✅ keep steps horizontal */
+    flex-wrap: nowrap;
   }
   .progress-bar .step {
     min-width: auto;
   }
   .progress-bar .step .label {
     font-size: 12px;
-    margin-top: 26px; /* ✅ push labels down a bit more */
+    margin-top: 26px;
   }
   .progress-bar .step .num {
     width: 22px;
@@ -346,6 +343,30 @@ a {
     height: 6px;
   }
 }
+
+/* === Small phones (400px and below) === */
+@media (max-width: 400px) {
+  .progress-bar {
+    gap: 6px;
+  }
+  .progress-bar .step {
+    min-width: 0;
+  }
+  .progress-bar .step .label {
+    font-size: 10px;
+    margin-top: 28px;
+    white-space: nowrap;
+  }
+  .progress-bar .step .num {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .fill-line {
+    height: 5px;
+  }
+}
+
 
 /* === Small phones (400px and below) === */
 @media (max-width: 400px) {
@@ -365,7 +386,7 @@ a {
     width: 20px;
     height: 20px;
     font-size: 10px;
-    
+    transform: translateY(-16px); /* ✅ perfect alignment */
   }
   .fill-line {
     height: 5px;
