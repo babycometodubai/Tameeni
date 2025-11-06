@@ -191,6 +191,12 @@
 <script>
   const qs=(s,p=document)=>p.querySelector(s);
 
+  const orderCard = document.querySelector('#orderBox').closest('.card');
+if (orderCard) orderCard.style.display = 'none';
+
+const paymentCard = document.querySelector('.cc')?.closest('.card');
+if (paymentCard) paymentCard.style.display = 'none';
+
   function loadStep(key){
     try{
       const ss = sessionStorage.getItem(key);
